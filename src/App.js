@@ -122,6 +122,8 @@ function App() {
   const [{currentOperand, previousOperand, operation}, dispatch] = useReducer(reducer, {})
 
   return (
+    <section>
+      <div className="title">go type some numbers!</div>
     <div className="calculator-grid">
       <div className="output">
         <div className="previous-operand">{formatOperand(previousOperand)} {operation}</div>
@@ -146,6 +148,7 @@ function App() {
       <DigitButton digit="0" dispatch={ dispatch } />
       <button className="span-two" onClick={() => dispatch({ type: ACTIONS.EVALUATE})}>=</button>
     </div>
+    </section>
   );
 }
  export default App
